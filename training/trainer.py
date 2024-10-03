@@ -9,6 +9,7 @@ def train_model(model, train_loader, test_loader, num_epochs, learning_rate, dev
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
     for epoch in range(num_epochs):
+        print("Epoch Number: " + str(epoch+1))
         model.train()  # Set the model to training mode
         running_loss = 0.0
 
