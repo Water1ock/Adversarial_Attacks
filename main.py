@@ -6,7 +6,7 @@ def run_resnet_experiment():
     num_epochs = 10
     learning_rate = 0.001
     batch_size = 64
-    epsilon = 0.1
+    epsilon = 0.07
 
     # Create a dummy argument list
     args = [
