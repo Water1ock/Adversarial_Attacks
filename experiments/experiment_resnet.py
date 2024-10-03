@@ -1,10 +1,13 @@
 import torch
+import os
 import argparse
 from models.resnet import ResNet18
 from data.cifar10_loader import get_cifar10_loaders
 from training.trainer import train_model
 from adversarial_algorithms.fgsm import fgsm_attack
 from utils.visualization import visualize_images, plot_accuracy_comparison
+
+MODEL_SAVE_PATH = "results/models/resnet18.pth"
 
 def main(args):
     # Set device

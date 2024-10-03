@@ -55,34 +55,13 @@ def plot_accuracy_comparison(model_name, original_acc, final_acc):
     ax.set_title('Accuracy Comparison')
     ax.set_xticks(x)
     ax.set_xticklabels(labels)
-    ax.ylim(0, 1)  # Set y-axis limits
+    ax.set_ylim(0, 1)  # Set y-axis limits
     ax.bar_label(bars)
 
     plt.tight_layout()
     os.makedirs('results/plots', exist_ok=True)
     save_plot(plt, "Accuracy Comparision: " + str(model_name))
     plt.show()
-
-def prepare_and_visualize(adv_examples, model_name):
-    """
-    Prepare data for visualization and call the visualization function.
-
-    Args:
-    - adv_examples: List of tuples containing (initial_pred, final_pred, adv_ex, orig_img, target).
-    """
-    original_images = []
-    adversarial_images = []
-    labels = []
-    preds = []
-
-    for init_pred, final_pred, adv_ex, orig_img, target in adv_examples:
-        original_images.append(orig_img)
-        adversarial_images.append(adv_ex)
-        labels.append(target)
-        preds.append(final_pred)
-
-    # Call the visualization function
-    visualize_images(model_name, original_images, adversarial_images, labels, preds)
 
 def save_plot(plt, filename):
     """Save the current plot as a PNG file."""
