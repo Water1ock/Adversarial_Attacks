@@ -22,7 +22,7 @@ def train_model(model, train_loader, test_loader, num_epochs, learning_rate, dev
             loss.backward()  # Backward pass and optimize
             optimizer.step()
 
-            running_loss += loss
+            running_loss += loss.item()
 
         # Calculate accuracy, precision, and recall on test data
         test_accuracy = calculate_accuracy(model, test_loader, device)

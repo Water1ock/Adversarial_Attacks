@@ -24,7 +24,7 @@ def calculate_accuracy(model, data_loader, device):
 
 def calculate_loss(output, target, criterion):
     loss = criterion(output, target)
-    return loss.item()  # Return loss as a scalar
+    return loss
 
 def calculate_precision(predicted, target):
     """
