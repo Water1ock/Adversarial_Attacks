@@ -1,0 +1,25 @@
+# Ignore IntelliJ IDEA specific files
+.idea/
+*.iml
+
+# Ignore build directories
+/build/
+out/
+
+# Ignore logs
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore Python cache files (if applicable)
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment (if applicable)
+venv/
+env/
+
+# Ignore dependency directories (if applicable)
+node_modules/
