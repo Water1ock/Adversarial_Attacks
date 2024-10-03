@@ -23,3 +23,7 @@ env/
 
 # Ignore dependency directories (if applicable)
 node_modules/
+
+# Ignore CIFAR-10 dataset files
+data/cifar-10-python.tar.gz
+data/cifar-10-batches-py/
