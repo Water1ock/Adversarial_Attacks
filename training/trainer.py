@@ -1,7 +1,7 @@
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from metrics import calculate_accuracy, calculate_loss, calculate_precision, calculate_recall
+from .metrics import calculate_accuracy, calculate_loss, calculate_precision, calculate_recall
 
 def train_model(model, train_loader, test_loader, num_epochs, learning_rate, device):
     model.to(device)  # Move model to the specified device

@@ -1,5 +1,5 @@
 import torch
-from metrics import calculate_accuracy, calculate_precision, calculate_recall
+from .metrics import calculate_accuracy, calculate_precision, calculate_recall
 
 def evaluate_model(model, test_loader, device):
     """
