@@ -17,10 +17,17 @@ def main(args):
     train_loader, test_loader = get_cifar10_loaders(batch_size=args.batch_size)
 
     # Initialize model
-    model = ResNet18()
+    model = ResNet18().to(device)
 
-    # Train the model
-    train_model(model, train_loader, test_loader, num_epochs=args.num_epochs, learning_rate=args.learning_rate, device=device)
+    if os.path.exists(MODEL_SAVE_PATH):
+        print("Loading pre-trained model...")
+        model.load_state_dict(torch.load(MODEL_SAVE_PATH, map_location=device))
+        model = model.to(device)
+    else:
+        train_model(model, train_loader, test_loader, num_epochs=args.num_epochs, learning_rate=args.learning_rate, device=device)
+        os.makedirs(os.path.dirname(MODEL_SAVE_PATH), exist_ok=True)
+        torch.save(model.state_dict(), MODEL_SAVE_PATH)
+        print(f"Model saved to {MODEL_SAVE_PATH}")
 
     # Perform FGSM attack
     original_acc, final_acc, adv_examples = fgsm_attack(model, test_loader, epsilon=args.epsilon)
