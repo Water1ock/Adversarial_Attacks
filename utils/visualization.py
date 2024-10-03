@@ -57,3 +57,24 @@ def plot_accuracy_comparison(original_acc, final_acc):
 
     plt.tight_layout()
     plt.show()
+
+def prepare_and_visualize(adv_examples):
+    """
+    Prepare data for visualization and call the visualization function.
+
+    Args:
+    - adv_examples: List of tuples containing (initial_pred, final_pred, adv_ex, orig_img, target).
+    """
+    original_images = []
+    adversarial_images = []
+    labels = []
+    preds = []
+
+    for init_pred, final_pred, adv_ex, orig_img, target in adv_examples:
+        original_images.append(orig_img)
+        adversarial_images.append(adv_ex)
+        labels.append(target)
+        preds.append(final_pred)
+
+    # Call the visualization function
+    visualize_images(original_images, adversarial_images, labels, preds)
