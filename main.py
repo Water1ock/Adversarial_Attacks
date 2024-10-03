@@ -1,4 +1,3 @@
-import sys
 from experiments.experiment_resnet import main as resnet_experiment
 
 def run_resnet_experiment():
@@ -9,7 +8,7 @@ def run_resnet_experiment():
     epsilon = 0.1
 
     # Create a dummy argument list
-    sys.argv = [
+    args = [
         'main.py',  # Script name
         '--num_epochs', str(num_epochs),
         '--learning_rate', str(learning_rate),
@@ -17,7 +16,7 @@ def run_resnet_experiment():
         '--epsilon', str(epsilon)
     ]
 
-    resnet_experiment()
+    resnet_experiment(args)
 
 if __name__ == "__main__":
     run_resnet_experiment()
