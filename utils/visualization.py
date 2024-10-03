@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
-def visualize_images(original_images, adversarial_images, labels, preds, n=5):
+def visualize_images(model_name, original_images, adversarial_images, labels, preds, n=5):
     """
     Visualize original and adversarial images side by side.
 
@@ -28,9 +29,11 @@ def visualize_images(original_images, adversarial_images, labels, preds, n=5):
         plt.axis('off')
 
     plt.tight_layout()
+    os.makedirs('results/plots', exist_ok=True)
+    save_plot(plt, model_name)
     plt.show()
 
-def plot_accuracy_comparison(original_acc, final_acc):
+def plot_accuracy_comparison(model_name, original_acc, final_acc):
     """
     Plot a bar chart to compare original and adversarial accuracy.
 
@@ -56,9 +59,11 @@ def plot_accuracy_comparison(original_acc, final_acc):
     ax.bar_label(bars)
 
     plt.tight_layout()
+    os.makedirs('results/plots', exist_ok=True)
+    save_plot(plt, "Accuracy Comparision: " + str(model_name))
     plt.show()
 
-def prepare_and_visualize(adv_examples):
+def prepare_and_visualize(adv_examples, model_name):
     """
     Prepare data for visualization and call the visualization function.
 
@@ -77,4 +82,9 @@ def prepare_and_visualize(adv_examples):
         preds.append(final_pred)
 
     # Call the visualization function
-    visualize_images(original_images, adversarial_images, labels, preds)
+    visualize_images(model_name, original_images, adversarial_images, labels, preds)
+
+def save_plot(plt, filename):
+    """Save the current plot as a PNG file."""
+    plt.savefig(f'results/plots/{filename}.png')  # Save the plot in the results/plots directory
+    plt.close()  # Close the plot to free up memory
