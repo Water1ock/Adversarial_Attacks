@@ -1,15 +1,17 @@
 # Adversarial_Attacks
 This project aims to evaluate the robustness of different models against different adversarial attack algorithms.
-The current version has integrated 4 different neural network architectures that you can use to visualize the impact of various Adversarial attacks such as the FGSM Attack, namely:
+The current version has integrated 4 different neural network architectures that you can use to visualize the impact of various Adversarial attacks such as the FGSM Attack.
 
+# Models Implemented
 1. ResNet (results of robustness evaluation of the ResNet18 model specifically has been uploaded, however you can use the ResNet34, ResNet 50, and other variations as well)
 2. MobileNet V2
 3. DLA Model
 4. VGG Model
 
-Apart from the Fast Gradient Signed Method attack and the Project Gradient Descent Attack (PGD), future work can include implementing the Carlini & Wagner Attack (C&W), and the Basic Iterative Method Attack(BIM) algorithms on the same models and the dataset to check for the model robustness against different adversarial attack algorithms.
+# Future Work
+Apart from the Fast Gradient Signed Method attack and the Project Gradient Descent Attack (PGD), future work can include implementing the Carlini & Wagner Attack (C&W), and the Basic Iterative Method Attack(BIM) algorithms on the same models and the dataset to check for the model robustness against different adversarial attack algorithms. The models can also further be trained with adversarial inputs in order to make them more robust against such attacks.
 
-The project packages are used for the following:-
+# Project Packages/Modules
 
 MODELS: contain all of the different neural network architectures and models, the robustness of which is going to be tested against adversarial attacks.
 DATA: contains the data loader along with data augmentation functionalities for the CIFAR-10 dataset.
