@@ -22,7 +22,7 @@ EXPERIMENTS: contains model specific code for evaluating the model robustness of
 
 | Model  | Accuracy | Accuracy after FGSM Attack | Accuracy after PGD Attack |
 | ------------- | ------------- | ------------- | ------------- |
-| ResNet18  | 86.4%  | 29.69% | 17.57% |
-| VGG11  | 83.99% | 32.98% | 27.89% |
-| MobileNetV2 | 83.79% | 25.04% | 11.73% |
-| DLA | 84.35% | 21.13% | 11.38% |
+| [ResNet18]([url](https://arxiv.org/abs/1512.03385))  | 86.4%  | 29.69% | 17.57% |
+| [VGG11]([url](https://arxiv.org/abs/1409.1556))  | 83.99% | 32.98% | 27.89% |
+| [MobileNetV2]([url](https://arxiv.org/abs/1801.04381)) | 83.79% | 25.04% | 11.73% |
+| [DLA]([url](https://arxiv.org/pdf/1707.06484)) | 84.35% | 21.13% | 11.38% |
