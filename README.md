@@ -13,12 +13,20 @@ Apart from the Fast Gradient Signed Method attack and the Project Gradient Desce
 
 # Project Packages/Modules
 
-MODELS: contain all of the different neural network architectures and models, the robustness of which is going to be tested against adversarial attacks.
-DATA: contains the data loader along with data augmentation functionalities for the CIFAR-10 dataset.
-TRAINING: contains the functionalities for training, calculating the accuracy, precision and recall of the different models.
-ADVERSARIAL_ALGORITHMS: contains the implementation of different adversarial attacks such as the FGSM attack.
-UTILS: contains functions for visualizing, saving and properly evaluating the robustness of different models against adversarial attacks.
-EXPERIMENTS: contains model specific code for evaluating the model robustness of different architectures against adversarial attacks.
+**MODELS:** contain all of the different neural network architectures and models, the robustness of which is going to be tested against adversarial attacks.
+
+**DATA:** contains the data loader along with data augmentation functionalities for the CIFAR-10 dataset.
+
+**TRAINING:** contains the functionalities for training, calculating the accuracy, precision and recall of the different models.
+
+**ADVERSARIAL_ALGORITHMS:** contains the implementation of different adversarial attacks such as the FGSM attack.
+
+**UTILS:** contains functions for visualizing, saving and properly evaluating the robustness of different models against adversarial attacks.
+
+**EXPERIMENTS:** contains model specific code for evaluating the model robustness of different architectures against adversarial attacks.
+
+# Dataset Used
+The [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) Dataset has been used for training the different models, and for applying the Adversarial attacks to check model robustness.
 
 # RESULTS
 
